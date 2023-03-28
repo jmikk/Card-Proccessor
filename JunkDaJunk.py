@@ -10,7 +10,7 @@ import sys
 
 
 
-Password = "me"
+Password = "************"
 cardid = ""
 season = ""
 giftto = "9006"
