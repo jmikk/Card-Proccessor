@@ -111,10 +111,9 @@ with open(NewListOfCards,"a+") as f:
                         giftToken = soup.find("SUCCESS").text
                     except AttributeError:
                         print(r.status_code)
-                        error=soup.find("ERROR").text
-                        print(f"ERROR {error}")
+                        print(f"ERROR {r.content}")
                         with open(NewErrorSheet,"a+") as a:
-                            a.writelines(error+"\n")
+                            a.writelines(r.content+"\n")
                         continue
                     #print(r.headers["x-pin"])
 
