@@ -17,6 +17,7 @@ giftto = "9006"
 from2 = ""
 
 UserAgent=input("Please enter your main nation's name: ")
+giftto = input("Enter the nation you want to giftto or if you are unsure send it to 9006")
 filename="puppet.csv"
 
 names=[]
@@ -112,8 +113,8 @@ with open(NewListOfCards,"a+") as f:
                         print(r.status_code)
                         error=soup.find("ERROR").text
                         print(f"ERROR {error}")
-                        with open(NewErrorSheet,"a+") as f:
-                            f.writelines(error+"\n")
+                        with open(NewErrorSheet,"a+") as a:
+                            a.writelines(error+"\n")
                         continue
                     #print(r.headers["x-pin"])
 
