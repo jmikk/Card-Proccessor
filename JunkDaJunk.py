@@ -96,7 +96,7 @@ with open(NewListOfCards,"a+") as f:
                 if isJunk:
                     print(f"{Fore.RED}{cardid} Junk with a MV of: {MARKET_VALUE}, highest_bid: {highest_bid}, rarity:{CATEGORY}")
                     print(Style.RESET_ALL)
-                    f.writelines(f"https://www.nationstates.net/nation={each}/page=ajax3/a=junkcard/card={cardid}/season={season}/autoclose=1")
+                    f.writelines(f"https://www.nationstates.net/nation={each}/page=ajax3/a=junkcard/card={cardid}/season={season}/autoclose=1"+"\n")
                 else:
                     print(f"{Fore.GREEN}SELL card with a MV of: {MARKET_VALUE}, highest_bid: {highest_bid}, rarity:{CATEGORY}")
                     print(Style.RESET_ALL)
@@ -122,7 +122,7 @@ with open(NewListOfCards,"a+") as f:
                         print(f"{Fore.GREEN} Gifted to {giftto}")
                         print(Style.RESET_ALL)
                         with open(NewListOfsellCards,"a+") as h:
-                            h.writelines(f"https://www.nationstates.net/page=deck/nation={giftto}/card={cardid}/season={season}?sellmode=1")
+                            h.writelines(f"https://www.nationstates.net/page=deck/nation={giftto}/card={cardid}/season={season}?sellmode=1" + "\n")
                     #200 is good
 
 
