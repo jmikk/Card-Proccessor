@@ -109,7 +109,7 @@ with open(NewListOfCards,"a+") as f:
                     #ERROR Oh no! {nationName} cannot receive your gift as they have no deck capacity.
                     try:
                         giftToken = soup.find("SUCCESS").text
-                    except AttributeError,TypeError:
+                    except (AttributeError,TypeError):
                         print(r.status_code)
                         print(f"ERROR {r.content}")
                         with open(NewErrorSheet,"a+") as a:
