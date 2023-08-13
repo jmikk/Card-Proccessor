@@ -8,7 +8,7 @@ from colorama import init, Fore, Back, Style
 import sys
 
 
-
+print("Version 1")
 
 Password = "************"
 cardid = ""
