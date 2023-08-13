@@ -16,7 +16,7 @@ season = ""
 giftto = "9006"
 from2 = ""
 
-UserAgent=input("Please enter your main nation's name: ")
+UserAgent=input("Please enter your main nation's name: ")+"JunkDaJunk written by 9003, Email: NSWA9002@gmail.com, discord 9003, NS nation: 9003"
 giftto = input("Enter the nation you want to giftto or if you are unsure send it to 9006")
 filename="puppet.csv"
 
