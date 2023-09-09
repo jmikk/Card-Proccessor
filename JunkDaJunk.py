@@ -53,7 +53,7 @@ with open(NewListOfCards,"a+") as f:
             input("STOOOOPPPPPPP")
             continue
 
-        r = requests.get('https://www.nationstates.net/cgi-bin/api.cgi/', headers={'User-Agent': UserAgent}, params={'nationname':each, 'q':'cards+deck'})
+        r = requests.get('https://www.nationstates.net/cgi-bin/api.cgi/', headers={'User-Agent': UserAgent}, params={'nationname':each, 'q':'cards+deck+info'})
         print(f"{Fore.BLUE}Grabbing {each}+{Style.RESET_ALL}")
         sleep(.7)
         soup = BeautifulSoup(r.content, "xml")
@@ -70,6 +70,7 @@ with open(NewListOfCards,"a+") as f:
             for stuff in soup2.find_all("CARD"):
                 CATEGORY = stuff.find("CATEGORY").text
                 MARKET_VALUE = stuff.find("MARKET_VALUE").text
+                REGION = stuff.find("REGION")
 
                 highest_bid = 0
                 markets = soup2.find_all('MARKET')
@@ -92,6 +93,12 @@ with open(NewListOfCards,"a+") as f:
                     isJunk=True 
                 if float(MARKET_VALUE) >= 10:
                     isJunk=False
+                if REGION is not None:
+                    REGION = REGION.text
+                    # if REGION == "Herta Space Station"
+                        # isJunk=False
+                    # if REGION == "Testregionia":
+                        # isJunk=False
 
                 if isJunk:
                     print(f"{Fore.RED}{cardid} Junk with a MV of: {MARKET_VALUE}, highest_bid: {highest_bid}, rarity:{CATEGORY}")
