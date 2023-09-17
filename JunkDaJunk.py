@@ -53,7 +53,7 @@ with open(NewListOfCards,"a+") as f:
             input("STOOOOPPPPPPP")
             continue
 
-        r = requests.get('https://www.nationstates.net/cgi-bin/api.cgi/', headers={'User-Agent': UserAgent}, params={'nationname':each, 'q':'cards+deck+info'})
+        r = requests.get('https://www.nationstates.net/cgi-bin/api.cgi/', headers={'User-Agent': UserAgent}, params={'nationname':each, 'q':'cards+deck'})
         print(f"{Fore.BLUE}Grabbing {each}+{Style.RESET_ALL}")
         sleep(.7)
         soup = BeautifulSoup(r.content, "xml")
@@ -63,7 +63,7 @@ with open(NewListOfCards,"a+") as f:
            # print(f"{Fore.BLUE}Card ID: {cardid}, Season: {season}")
 
 
-            r2 = requests.get('https://www.nationstates.net/cgi-bin/api.cgi/', headers={'User-Agent': UserAgent}, params={'cardid':cardid,'season':season, 'q':'card+markets'})
+            r2 = requests.get('https://www.nationstates.net/cgi-bin/api.cgi/', headers={'User-Agent': UserAgent}, params={'cardid':cardid,'season':season, 'q':'card+markets+info'})
             sleep(.7)
             soup2 = BeautifulSoup(r2.content, "xml")
 
