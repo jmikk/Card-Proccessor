@@ -45,8 +45,8 @@ if os.path.exists(NewListOfsellCards):
     os.remove(NewListOfsellCards)
 
 count = -1
-
-csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT9_527lS9_zLqNhFlRF31X8CDT9bpOlA32exvoNDMNzAP9QOiwO1ZQ7VhRN2K_eGrfQ2Tn38Or-QR8/pub?gid=0&single=true&output=csv"
+#this is a blank spreadsheet you can replace with your own if you want to send certain cards to certain places.
+csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRzOEHnUceACPdpzIWFFOZZmQX4bVNHc_FEu-eN9XsbagcJa9hzm1XaCBaUXy5j71vk1YZI0avQjiph/pub?gid=0&single=true&output=csv"
 
 response = requests.get(csv_url)
 
