@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import sys
 
 
-print("Version 3")
+print("Version 3.1")
 
 Password = "************"
 cardid = ""
