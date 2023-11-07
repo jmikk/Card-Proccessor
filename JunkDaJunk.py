@@ -212,7 +212,7 @@ with open(NewListOfCards, "a+") as f:
                             print(r.status_code)
                             print(f"ERROR {z.content}")
                             with open(NewErrorSheet, "a+") as a:
-                                a.writelines(r.content + "\n")
+                                a.writelines(r.text + "\n")
                             continue
                          # print(r.headers["x-pin"])
 
