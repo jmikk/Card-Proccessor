@@ -155,7 +155,7 @@ with open(NewListOfCards, "a+") as f:
                         )
                         print(Style.RESET_ALL)
                         f.writelines(
-                            f"https://www.nationstates.net/nation={each}/page=ajax3/a=junkcard/card={cardid}/season={season}/User_agent={UserAgent}Script=JunkDaJunk/Author_Email=NSWA9002@gmail.com/Author_discord=9003/Author_main_nation=9003/autoclose=1"
+                            f"https://www.nationstates.net/nation={each}/page=ajax3/a=junkcard/card={cardid}/season={season}/User_agent={UserAgent}/Script=JunkDaJunk/Generated_by=JunkDaJunk/Author_Email=NSWA9002@gmail.com/Author_discord=9003/Author_main_nation=9003/autoclose=1"
                             + "\n"
                         )
                     else:
